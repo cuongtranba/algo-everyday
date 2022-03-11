@@ -48,41 +48,4 @@ func longestNiceSubstring(s string) string {
 	}
 
 	return subStr
-
-	m := []string{}
-	current := ""
-	mp := map[string]string{
-		strings.ToLower(string(subStr[0])): string(subStr[0]),
-	}
-	for i := 0; i < len(subStr); i++ {
-		_, ok := mp[strings.ToLower(string(subStr[i]))]
-		if ok {
-			current += string(subStr[i])
-		} else {
-			m = append(m, current)
-			current = ""
-			mp = map[string]string{
-				strings.ToLower(string(subStr[i])): string(subStr[i]),
-			}
-		}
-	}
-
-	if current != "" {
-		m = append(m, current)
-	}
-
-	currentMax := 0
-	for _, v := range m {
-		if len(v) > currentMax {
-			currentMax = len(v)
-		}
-	}
-
-	for _, v := range m {
-		if len(v) == currentMax {
-			return v
-		}
-	}
-
-	return ""
 }
