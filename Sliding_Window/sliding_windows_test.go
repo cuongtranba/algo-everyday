@@ -2,7 +2,7 @@ package slidingwindow
 
 import "testing"
 
-func Test_countGoodSubstrings(t *testing.T) {
+func Test_findMaxAverage(t *testing.T) {
 	type args struct {
 		s string
 	}
