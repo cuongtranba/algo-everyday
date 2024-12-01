@@ -34,11 +34,11 @@ func maxLevelSum(root *TreeNode) int {
 				// push into queue to calculate next level
 				queue = append(queue, node.Right)
 			}
-			// Cập nhật level có tổng lớn nhất
-			if levelSum > maxSum {
-				maxSum = levelSum
-				maxLevel = currentLevel
-			}
+		}
+		// Cập nhật level có tổng lớn nhất
+		if levelSum > maxSum {
+			maxSum = levelSum
+			maxLevel = currentLevel
 		}
 		currentLevel++ // Chuyển sang level tiếp theo
 	}
